@@ -2,13 +2,13 @@
 #include <cmath>
 using namespace std;
 
-double volum_segitiga(double alas, double tinggi){
-    return (0,5*alas*tinggi );
+double hitungJarak(double x1, double y1, double x2, double y2) {
+    return sqrt(pow(x2 - x1, 2) + pow(y2 - y1, 2));
 }
-
-int main(){
- cout << volum_segitiga(3,3);
-
+int main() {
+    int jumlahLokasi;
+    cout << "Masukkan jumlah lokasi: ";
+    cin >> jumlahLokasi;
 return 0;
 }
 
