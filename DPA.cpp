@@ -9,3 +9,5 @@ double volum_segitiga(double alas, double tinggi){
 int main(){
  cout << volum_segitiga(3,3);
 }
+
+
