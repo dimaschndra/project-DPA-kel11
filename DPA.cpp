@@ -19,3 +19,28 @@ int main(){
 }
 int Urutan[JumlahLokasi];
 bool SudahDiKunjungi[JumlahLokasi] = {false};
+
+
+ Urutan[0] = 0;
+ SudahDiKunjungi[0] = true;
+
+   double TotalJarak = 0.0;
+    for (int i = 1; i < JumlahLokasi; ++i) { 
+        int LokasiSebelumnya = Urutan[i - 1];
+        double JarakTerdekat = INFINITY;
+        int LokasiBerikutnya = -1;
+
+        for (int j = 0; j < JumlahLokasi; ++j) {
+            if (!SudahDiKunjungi[j]) {
+                double jarak = HitungJarakTempuh(X[LokasiSebelumnya], Y[LokasiSebelumnya], X[j], Y[j]);
+                if (jarak < JarakTerdekat) {
+                    JarakTerdekat = jarak;
+                    LokasiBerikutnya = j;
+                }
+            }
+        }
+
+        Urutan[i] = LokasiBerikutnya;
+        SudahDiKunjungi[LokasiBerikutnya] = true;
+        TotalJarak += JarakTerdekat;
+    }
